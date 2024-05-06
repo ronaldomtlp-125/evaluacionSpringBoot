@@ -1,5 +1,6 @@
 package com.evaluacionfinaljpa.evaluacionfinaljpa.controller;
 
+import com.evaluacionfinaljpa.evaluacionfinaljpa.dto.VentaClienteDTO;
 import com.evaluacionfinaljpa.evaluacionfinaljpa.dto.VentaFechaDTO;
 import com.evaluacionfinaljpa.evaluacionfinaljpa.model.Producto;
 import com.evaluacionfinaljpa.evaluacionfinaljpa.model.Venta;
@@ -63,5 +64,12 @@ public class VentaController {
     @ResponseBody
     public VentaFechaDTO traerSumaVentaFecha(@PathVariable LocalDate fecha_venta){
         return iVentaServ.traerSumaVentaFechaServ(fecha_venta);
+    }
+    
+    //Punto 7
+    @GetMapping("/ventas/mayor_venta")
+    @ResponseBody
+    public VentaClienteDTO traerDetallesVentaMayor(){
+        return iVentaServ.traerDetallesVentaMayorServ();
     }
 }

@@ -17,15 +17,15 @@ import lombok.Setter;
 public class Venta {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long codigo_venta;
+    private Long codigo_venta; //
     private LocalDate fecha_venta;
-    private Double total;
+    private Double total; //
     @OneToMany(mappedBy = "venta")
     @JsonManagedReference
-    private List<Producto> listaProductos;
+    private List<Producto> listaProductos; // cantidad, NO lista
     @OneToOne
     @JoinColumn(name = "fk_id_cliente", referencedColumnName = "id_cliente")
-    private Cliente unCliente;
+    private Cliente unCliente; //nombre //apellido
 
     public Venta() {
     }

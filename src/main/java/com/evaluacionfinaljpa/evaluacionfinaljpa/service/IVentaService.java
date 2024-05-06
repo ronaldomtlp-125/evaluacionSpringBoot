@@ -1,5 +1,6 @@
 package com.evaluacionfinaljpa.evaluacionfinaljpa.service;
 
+import com.evaluacionfinaljpa.evaluacionfinaljpa.dto.VentaClienteDTO;
 import com.evaluacionfinaljpa.evaluacionfinaljpa.dto.VentaFechaDTO;
 import com.evaluacionfinaljpa.evaluacionfinaljpa.model.Producto;
 import com.evaluacionfinaljpa.evaluacionfinaljpa.model.Venta;
@@ -24,4 +25,7 @@ public interface IVentaService {
     
     //punto 6
     public VentaFechaDTO traerSumaVentaFechaServ(LocalDate fecha_venta);
+    
+    //punto 7
+    public VentaClienteDTO traerDetallesVentaMayorServ();
 }
