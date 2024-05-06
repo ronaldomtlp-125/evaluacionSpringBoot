@@ -8,5 +8,5 @@ import org.springframework.stereotype.Service;
 public class VentaService implements IVentaService{
     
     @Autowired
-    IVentaRepository iVentaRepo;
+    private IVentaRepository iVentaRepo;
 }

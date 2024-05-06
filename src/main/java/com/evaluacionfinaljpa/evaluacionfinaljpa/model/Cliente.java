@@ -25,6 +25,11 @@ public class Cliente {
         this.apellido = apellido;
         this.dni = dni;
     }
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "id_cliente=" + id_cliente + ", nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + '}';
+    }
     
     
 }

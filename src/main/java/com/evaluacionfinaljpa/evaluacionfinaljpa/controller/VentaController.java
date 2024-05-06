@@ -8,5 +8,5 @@ import org.springframework.web.bind.annotation.RestController;
 public class VentaController {
     
     @Autowired
-    IVentaService iVentaServ;
+    private IVentaService iVentaServ;
 }
