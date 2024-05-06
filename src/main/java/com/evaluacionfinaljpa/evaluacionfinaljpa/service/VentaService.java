@@ -1,5 +1,6 @@
 package com.evaluacionfinaljpa.evaluacionfinaljpa.service;
 
+import com.evaluacionfinaljpa.evaluacionfinaljpa.model.Producto;
 import com.evaluacionfinaljpa.evaluacionfinaljpa.model.Venta;
 import com.evaluacionfinaljpa.evaluacionfinaljpa.repository.IVentaRepository;
 import java.util.List;
@@ -53,5 +54,17 @@ public class VentaService implements IVentaService{
         } else{
             throw new NoSuchElementException("La venta con código " + codigo_venta + " no existe en la base de datos.");
         }
+    }
+
+    @Override
+    public List<Producto> traerListProductosVentaServ(Long codigo_venta) {
+        List<Producto> listaProducto = null;
+        
+        if(iVentaRepo.existsById(codigo_venta)){
+            listaProducto = this.traerVentaServ(codigo_venta).getListaProductos();
+        } else{
+            throw new NoSuchElementException("La venta con código " + codigo_venta + " no existe en la base de datos.");
+        }
+        return listaProducto;
     }
 }

@@ -1,5 +1,6 @@
 package com.evaluacionfinaljpa.evaluacionfinaljpa.service;
 
+import com.evaluacionfinaljpa.evaluacionfinaljpa.model.Producto;
 import com.evaluacionfinaljpa.evaluacionfinaljpa.model.Venta;
 import java.util.List;
 
@@ -15,4 +16,7 @@ public interface IVentaService {
     public void eliminarVentaServ(Long codigo_venta);
 
     public void editarVentaServ(Long codigo_venta, Venta venta);
+    
+    //punto 5
+    public List<Producto> traerListProductosVentaServ(Long codigo_venta);
 }

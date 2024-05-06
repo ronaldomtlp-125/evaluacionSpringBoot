@@ -1,5 +1,6 @@
 package com.evaluacionfinaljpa.evaluacionfinaljpa.controller;
 
+import com.evaluacionfinaljpa.evaluacionfinaljpa.model.Producto;
 import com.evaluacionfinaljpa.evaluacionfinaljpa.model.Venta;
 import com.evaluacionfinaljpa.evaluacionfinaljpa.service.IVentaService;
 import java.util.List;
@@ -45,5 +46,12 @@ public class VentaController {
     @PutMapping("/ventas/editar/{codigo_venta}")
     public void editarVenta(@PathVariable Long codigo_venta, @RequestBody Venta venta){
         iVentaServ.editarVentaServ(codigo_venta, venta);
+    }
+    
+    //Punto 5
+    @GetMapping("/ventas/productos/{codigo_venta}")
+    @ResponseBody
+    public List<Producto> traerListProductoVenta(@PathVariable Long codigo_venta){
+        return iVentaServ.traerListProductosVentaServ(codigo_venta);
     }
 }
