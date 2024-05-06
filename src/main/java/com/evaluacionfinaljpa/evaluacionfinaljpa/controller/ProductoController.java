@@ -25,19 +25,19 @@ public class ProductoController {
         iProductoServ.crearProductoServ(producto);
     }
     
-    @GetMapping("productos")
+    @GetMapping("/productos")
     @ResponseBody
     public List<Producto> traerListaProducto(){
         return iProductoServ.traerListaProductoServ();
     }
     
-    @GetMapping("productos/{codigo_producto}")
+    @GetMapping("/productos/{codigo_producto}")
     @ResponseBody
     public Producto traerProducto(@PathVariable Long codigo_producto){
         return iProductoServ.traerProductoServ(codigo_producto);
     }
     
-    @DeleteMapping("productos/eliminar/{codigo_producto}")
+    @DeleteMapping("/productos/eliminar/{codigo_producto}")
     public void eliminarProducto(@PathVariable Long codigo_producto){
         iProductoServ.eliminarProductoServ(codigo_producto);
     }

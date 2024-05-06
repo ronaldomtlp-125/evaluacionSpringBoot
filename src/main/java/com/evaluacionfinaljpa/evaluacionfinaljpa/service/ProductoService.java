@@ -13,6 +13,7 @@ public class ProductoService implements IProductoService {
     @Autowired
     private IProductoRepository iProductoRepo;
 
+    //CRUD
     @Override
     public void crearProductoServ(Producto producto) {
         iProductoRepo.save(producto);

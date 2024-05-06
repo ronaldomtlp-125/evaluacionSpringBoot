@@ -25,19 +25,19 @@ public class ClienteController {
         iClienteServ.crearClienteServ(cliente);
     }
     
-    @GetMapping("clientes")
+    @GetMapping("/clientes")
     @ResponseBody
     public List<Cliente> traerListaCliente(){
         return iClienteServ.traerListaClienteServ();
     }
     
-    @GetMapping("clientes/{id_cliente}")
+    @GetMapping("/clientes/{id_cliente}")
     @ResponseBody
     public Cliente traerCliente(@PathVariable Long id_cliente){
         return iClienteServ.traerClienteServ(id_cliente);
     }
     
-    @DeleteMapping("clientes/eliminar/{id_cliente}")
+    @DeleteMapping("/clientes/eliminar/{id_cliente}")
     public void eliminarCLiente(@PathVariable Long id_cliente){
         iClienteServ.eliminarClienteServ(id_cliente);
     }

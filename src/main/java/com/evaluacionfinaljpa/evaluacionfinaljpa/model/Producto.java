@@ -1,5 +1,7 @@
 package com.evaluacionfinaljpa.evaluacionfinaljpa.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,6 +22,7 @@ public class Producto {
     private Double cantidad_disponible;
     @ManyToOne
     @JoinColumn(name = "fk_codigo_venta")
+    @JsonBackReference
     private Venta venta;
 
     public Producto() {
