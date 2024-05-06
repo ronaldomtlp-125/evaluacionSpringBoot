@@ -38,8 +38,8 @@ public class ClienteController {
     }
     
     @DeleteMapping("clientes/eliminar/{id_cliente}")
-    public void borrarCLiente(@PathVariable Long id_cliente){
-        iClienteServ.borrarClienteServ(id_cliente);
+    public void eliminarCLiente(@PathVariable Long id_cliente){
+        iClienteServ.eliminarClienteServ(id_cliente);
     }
     
     @PutMapping("/clientes/editar/{id_cliente}")
