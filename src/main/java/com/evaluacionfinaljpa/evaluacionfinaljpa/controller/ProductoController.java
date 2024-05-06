@@ -46,4 +46,11 @@ public class ProductoController {
     public void editarProducto(@PathVariable Long codigo_producto, @RequestBody Producto producto){
         iProductoServ.editarProductoServ(codigo_producto, producto);
     }
+    
+    //Punto 4
+    @GetMapping("/productos/falta_stock")
+    @ResponseBody
+    public List<Producto> traerProductoSinStock(){
+        return iProductoServ.traerProductoFaltaStockServ();
+    }
 }

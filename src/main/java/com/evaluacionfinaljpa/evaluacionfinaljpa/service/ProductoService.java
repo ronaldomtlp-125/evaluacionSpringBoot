@@ -2,6 +2,7 @@ package com.evaluacionfinaljpa.evaluacionfinaljpa.service;
 
 import com.evaluacionfinaljpa.evaluacionfinaljpa.model.Producto;
 import com.evaluacionfinaljpa.evaluacionfinaljpa.repository.IProductoRepository;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +54,18 @@ public class ProductoService implements IProductoService {
         } else {
             throw new NoSuchElementException("El producto con código " + codigo_producto + " no existe en la base de datos.");
         }
+    }
+
+    @Override
+    public List<Producto> traerProductoFaltaStockServ() {
+        List<Producto> listaTotal = this.traerListaProductoServ();
+        List<Producto> listaSinStock = new ArrayList<>();
+        for(Producto produAux : listaTotal){
+            if(produAux.getCantidad_disponible() < 5.0){
+                listaSinStock.add(produAux);
+            }
+        }
+        return listaSinStock;
     }
 
 }
