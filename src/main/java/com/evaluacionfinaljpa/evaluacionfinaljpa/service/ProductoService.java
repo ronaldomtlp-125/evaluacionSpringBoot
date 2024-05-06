@@ -56,6 +56,7 @@ public class ProductoService implements IProductoService {
         }
     }
 
+    //Punto 4
     @Override
     public List<Producto> traerProductoFaltaStockServ() {
         List<Producto> listaTotal = this.traerListaProductoServ();

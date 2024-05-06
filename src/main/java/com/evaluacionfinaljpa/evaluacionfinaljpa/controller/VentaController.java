@@ -1,10 +1,13 @@
 package com.evaluacionfinaljpa.evaluacionfinaljpa.controller;
 
+import com.evaluacionfinaljpa.evaluacionfinaljpa.dto.VentaFechaDTO;
 import com.evaluacionfinaljpa.evaluacionfinaljpa.model.Producto;
 import com.evaluacionfinaljpa.evaluacionfinaljpa.model.Venta;
 import com.evaluacionfinaljpa.evaluacionfinaljpa.service.IVentaService;
+import java.time.LocalDate;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -53,5 +56,12 @@ public class VentaController {
     @ResponseBody
     public List<Producto> traerListProductoVenta(@PathVariable Long codigo_venta){
         return iVentaServ.traerListProductosVentaServ(codigo_venta);
+    }
+    
+    //Punto 6
+    @GetMapping("/ventas/fecha/{fecha_venta}")
+    @ResponseBody
+    public VentaFechaDTO traerSumaVentaFecha(@PathVariable LocalDate fecha_venta){
+        return iVentaServ.traerSumaVentaFechaServ(fecha_venta);
     }
 }
