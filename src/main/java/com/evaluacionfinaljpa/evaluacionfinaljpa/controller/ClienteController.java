@@ -46,5 +46,4 @@ public class ClienteController {
     public void editarCliente(@PathVariable Long id_cliente, @RequestBody Cliente cliente){
         iClienteServ.editarClienteServ(id_cliente, cliente);
     }
-    
 }
